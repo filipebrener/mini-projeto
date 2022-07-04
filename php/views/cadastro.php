@@ -20,46 +20,39 @@
     <form action="../service/cadastro_service.php" method="post">
         <div class="form-line">
             <label class="left-label">Nome do evento:</label>
-            <input name="name" type="text">
+            <input id="name" type="text">
         </div>
         <div class="form-line">
             <label class="left-label">Data de início:</label>
-                <input type="datetime-local" name="start_date">
+                <input type="datetime-local" id="start_date">
         </div>
         <div class="form-line">
             <label class="left-label">Data de encerramento:</label>
-                <input type="datetime-local" name="end_date">
+                <input type="datetime-local" id="end_date">
         </div>
         <div class="form-line">
             <label class="left-label">Tipo do evento:</label>
-            <input type="text" name="type">
+            <input type="text" id="type">
         </div>
         <div class="form-line">
-            <input type="checkbox" name="wifi">
+            <input type="checkbox" id="wifi">
             <label>Wi-fi</label><br>
-            <input type="checkbox" name="free_parking">
+            <input type="checkbox" id="free_parking">
             <label>Estacionamento grátis</label><br>
-            <input type="checkbox" name="free_drink">
+            <input type="checkbox" id="free_drink">
             <label>Bebida grátis</label>
         </div>
         <div class="form-line">
             <div>
                 <label class="left-label">Descrição do evento:</label>
             </div>
-            <textarea name="description" rows="5" cols="46" ></textarea>
+            <textarea id="description" rows="5" cols="46" ></textarea>
         </div>
-        <!-- <div class="form-line">
+        <div class="form-line">
             <label class="left-label">Banner do evento (imagem):</label>
-            <div id="drop_file_zone" ondrop="upload_file(event)" ondragover="return false">
-                <div id="drag_upload_file">
-                    <p>Solte o arquivo aqui</p>
-                    <p>Ou</p>
-                    <input name="selected_banner" type="file" id="selectfile">
-                    <input name="dropped_banner" type="hidden" id="file_dropped">
-                </div>
-            </div>
-        </div> -->
+                <input id="banner" type="file">
+        </div>
     </form>
-    <button onclick="submit()">Enviar</button>
+    <button type="submit" onClick="submmit()">Enviar</button>
 </body>
 </html>
