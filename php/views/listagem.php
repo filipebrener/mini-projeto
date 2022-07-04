@@ -16,6 +16,7 @@
     <?php include("../utils/navbar.html"); ?>
     <input type="hidden" id="screen" value="listagem">
     <h1>Listagem de Eventos</h1>
+    <div class="grid-container">
         <?php
             $sql = "SELECT * FROM evento ORDER BY start_date, name";
             $result = $conn->query($sql);
@@ -34,7 +35,7 @@
                     
                     echo "
                     <a href='exibir.php?id=$id'>
-                        <div class='container' id='$id'>
+                        <div class='grid-item' id='$id'>
                             <img src='$banner'><br>
                             Evento: $name<br>
                             Descrição: $description<br>
@@ -46,6 +47,6 @@
             }
             $conn->close();
         ?>
-
+    </div>
 </body>
 </html>

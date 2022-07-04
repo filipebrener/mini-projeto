@@ -32,6 +32,9 @@
     <?php include("../utils/navbar.html");?>
     <h1>Evento</h1>
     <div class="form-line">
+        <img src="<?php echo $banner;?>" alt="Banner do evento">
+    </div>
+    <div class="form-line">
         <label class="left-label">Nome do evento:</label>
         <input type="text" value="<?php echo $name;?>">
     </div>
