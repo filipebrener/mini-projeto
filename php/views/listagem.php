@@ -24,8 +24,8 @@
                 while($row = $result->fetch_assoc()) {
                     $id = $row['id'];
                     $name = $row['name'];
-                    $start_date = $row['start_date'];
-                    $end_date = $row['end_date'];
+                    $start_date = strtotime($row['start_date']);
+                    $end_date = strtotime($row['end_date']);
                     $type = $row['type'];
                     $wifi = $row['wifi'] ? "Sim" : "Não";
                     $free_parking = $row['free_parking'] ? "Sim" : "Não";
@@ -33,13 +33,21 @@
                     $description = $row['description'];
                     $banner = $row['banner'];
                     
+                    $start_day = date('d', $start_date );
+                    $start_month = date('M', $start_date );
+
                     echo "
                     <a href='exibir.php?id=$id'>
                         <div class='grid-item' id='$id'>
                             <img src='$banner'><br>
-                            Evento: $name<br>
-                            Descrição: $description<br>
-                            Data de início: $start_date
+                            <div class='description'>
+                                Evento: $name<br>
+                                Descrição: $description<br>
+                            </div>
+                            <div class='calendar-mini'>
+                                <div class='month'> $start_month </div>
+                                <div class='day'> <strong> $start_day </strong> </div>
+                            </div>
                         </div>
                     <a>";
 
