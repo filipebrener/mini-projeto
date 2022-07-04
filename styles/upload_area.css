@@ -1,0 +1,22 @@
+#drop_file_zone {
+    background-color: #EEE;
+    border: #999 2px dashed;
+    width: 400px;
+    height: 130px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#drag_upload_file{
+    width: 50%;
+    margin: 0 auto;
+}
+
+#grag_upload_file p{
+    text-align: center;
+}
+
+#grag_upload_file #selectfile{
+    display: none;
+}
