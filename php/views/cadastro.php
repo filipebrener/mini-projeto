@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../styles/evento.css">
+    <link rel="icon" href="../utils/images/favicon.ico" type="image/ico">
     <link rel="stylesheet" href="../../styles/upload_area.css">
     <script src="../../scripts/cadastro.js"></script>
     <script src="../../scripts/nav_bar.js"></script>
@@ -16,18 +17,18 @@
     <?php include("../utils/navbar.html");?>
     <input type="hidden" id="screen" value="cadastro">
     <h1>Cadastro de Eventos</h1>
-    <form action="post">
+    <form action="../service/cadastro_service.php" method="post">
         <div class="form-line">
             <label class="left-label">Nome do evento:</label>
             <input name="name" type="text">
         </div>
         <div class="form-line">
             <label class="left-label">Data de início:</label>
-                <input type="datetime" name="start_date" id="start-date">
+                <input type="datetime-local" name="start_date">
         </div>
         <div class="form-line">
             <label class="left-label">Data de encerramento:</label>
-                <input type="datetime" name="end_date">
+                <input type="datetime-local" name="end_date">
         </div>
         <div class="form-line">
             <label class="left-label">Tipo do evento:</label>
@@ -45,9 +46,9 @@
             <div>
                 <label class="left-label">Descrição do evento:</label>
             </div>
-            <textarea id="story" name="description" rows="5" cols="46" ></textarea>
+            <textarea name="description" rows="5" cols="46" ></textarea>
         </div>
-        <div class="form-line">
+        <!-- <div class="form-line">
             <label class="left-label">Banner do evento (imagem):</label>
             <div id="drop_file_zone" ondrop="upload_file(event)" ondragover="return false">
                 <div id="drag_upload_file">
@@ -57,8 +58,8 @@
                     <input name="dropped_banner" type="hidden" id="file_dropped">
                 </div>
             </div>
-        </div>
-        <button type="submit">Enviar</button>
+        </div> -->
     </form>
+    <button onclick="submit()">Enviar</button>
 </body>
 </html>
