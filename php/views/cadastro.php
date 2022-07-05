@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../styles/evento.css">
     <link rel="icon" href="../utils/images/favicon.ico" type="image/ico">
     <link rel="stylesheet" href="../../styles/upload_area.css">
-    <script src="../../scripts/cadastro.js"></script>
+    <script src="../../scripts/evento.js"></script>
     <script src="../../scripts/nav_bar.js"></script>
     <title>Cadastro</title>
 </head>
@@ -17,7 +17,7 @@
     <?php include("../utils/navbar.html");?>
     <input type="hidden" id="screen" value="cadastro">
     <h1>Cadastro de eventos</h1>
-    <form action="../service/cadastro_service.php" method="post">
+    <form action="../service/evento_service.php" method="post">
         <div class="form-line">
             <label class="left-label">Nome do evento:</label>
             <input id="name" type="text">
@@ -53,6 +53,6 @@
                 <input id="banner" type="file">
         </div>
     </form>
-    <button type="submit" onClick="submmit()">Enviar</button>
+    <button type="submit" onClick="create()">Enviar</button>
 </body>
 </html>

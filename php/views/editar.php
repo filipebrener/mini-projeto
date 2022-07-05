@@ -25,44 +25,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../utils/images/favicon.ico" type="image/ico">
     <link rel="stylesheet" href="../../styles/evento.css">
+    <script src="../../scripts/evento.js"></script>
     <script src="../../scripts/nav_bar.js"></script>
     <title>Editar</title>
 </head>
 <body>
     <?php include("../utils/navbar.html");?>
     <h1>Evento</h1>
+    <input id="id" type="hidden" value="<?php echo $id;?>">
+    <input id="current_banner" type="hidden" value="<?php echo $banner;?>">
     <div class="form-line">
         <img src="<?php echo $banner;?>" alt="Banner do evento">
     </div>
     <div class="form-line">
         <label class="left-label">Nome do evento:</label>
-        <input type="text" value="<?php echo $name;?>">
+        <input id="name" type="text" value="<?php echo $name;?>">
     </div>
     <div class="form-line">
         <label class="left-label">Data de início:</label>
-            <input type="datetime" id="start-date" id="event-date" onchange="formatData('start-date')" value="<?php echo $start_date;?>">
+        <input type="datetime" id="start_date" value="<?php echo $start_date;?>">
     </div>
     <div class="form-line">
         <label class="left-label">Data de encerramento:</label>
-            <input type="datetime" id="end-date" placeholder="dd-MM-yyyy" onchange="formatData('end-date')" value="<?php echo $end_date;?>">
+        <input type="datetime" id="end_date" value="<?php echo $end_date;?>">
     </div>
     <div class="form-line">
         <label class="left-label">Tipo do evento:</label>
-        <input type="text" value="<?php echo $type;?>">
+        <input type="text" id="type" value="<?php echo $type;?>">
     </div>
     <div class="form-line">
-        <input type="checkbox" <?php if($wifi) echo "checked" ;?>>
+        <input id="wifi" type="checkbox" <?php if($wifi) echo "checked" ;?>>
         <label>Wi-fi</label><br>
-        <input type="checkbox" <?php if($free_parking) echo "checked" ;?>>
+        <input id="free_parking" type="checkbox" <?php if($free_parking) echo "checked" ;?>>
         <label>Estacionamento grátis</label><br>
-        <input type="checkbox" <?php if($free_drink) echo "checked" ;?>>
+        <input id="free_drink" type="checkbox" <?php if($free_drink) echo "checked" ;?>>
         <label>Bebida grátis</label>
     </div>
     <div class="form-line">
         <div>
             <label class="left-label">Descrição do evento:</label>
         </div>
-        <textarea id="story" name="story" rows="5" cols="46"><?php echo $description;?></textarea>
+        <textarea id="description" rows="5" cols="46"><?php echo $description;?></textarea>
     </div>
+    <div class="form-line">
+        <label class="left-label">Alterar banner do evento:</label>
+        <input id="banner" type="file">
+    </div>
+    <button onclick="edit()">Editar</button>
 </body>
 </html>

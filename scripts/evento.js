@@ -1,4 +1,4 @@
-function submmit() {
+function create() {
     let file_obj = document.getElementById('banner').files[0]
     if(file_obj != undefined) {
         var form_data = new FormData();                  
@@ -10,22 +10,43 @@ function submmit() {
                 let body = getBodyForm(this.responseText)
                 submmitEvent(body)
             } else {
-                console.log("deu ruim pra importar a image")
+                console.log("deu ruim pra importar a imagem")
             }
         }
         xhttp.send(form_data);
     }
 }
 
+function edit(){
+    let file_obj = document.getElementById('banner').files[0]
+    if(file_obj != undefined) {
+        var form_data = new FormData();                  
+        form_data.append('file', file_obj);
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "../service/image_importer.php", true);
+        xhttp.onload = function(event) {
+            if (xhttp.status == 200) {
+                let body = getBodyWithId(this.responseText)
+                submmitEvent(body)
+            } else {
+                console.log("deu ruim pra importar a imagem")
+            }
+        }
+        xhttp.send(form_data);
+    } else {
+        let banner = document.getElementById("current_banner").value
+        let body = getBodyWithId(banner)
+        submmitEvent(body)
+    }
+}
+
 function submmitEvent(body){
-    console.log(body)
-    let =  new FormData(); 
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "../service/cadastro_service.php", true);
+    xhttp.open("POST", "../service/evento_service.php", true);
     xhttp.setRequestHeader("Accept", "application/json");
     xhttp.setRequestHeader("Content-Type", "application/json");
     xhttp.onload = function(event) {
-        if (xhttp.status == 200) {
+        if (xhttp.status == 201) {
             window.location = "../../php/views/listagem.php"
         } else {
             // Erro ao salvar evento, tentar apagar imagem nesse ponto para que não tenha imagem salva desnecessáriamente
@@ -47,4 +68,11 @@ function getBodyForm(banner){
         description: document.getElementById("description").value,
         banner: banner
     })
+}
+
+function getBodyWithId(banner){
+    let body = JSON.parse(getBodyForm(banner))
+    body['id'] = document.getElementById("id").value
+    console.log(body)
+    return JSON.stringify(body)
 }
