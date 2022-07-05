@@ -26,7 +26,7 @@
     <link rel="icon" href="../utils/images/favicon.ico" type="image/ico">
     <link rel="stylesheet" href="../../styles/evento.css">
     <script src="../../scripts/nav_bar.js"></script>
-    <title>Exibir</title>
+    <title>Editar</title>
 </head>
 <body>
     <?php include("../utils/navbar.html");?>
@@ -49,10 +49,6 @@
     <div class="form-line">
         <label class="left-label">Tipo do evento:</label>
         <input type="text" value="<?php echo $type;?>">
-    </div>
-    <div class="form-line">
-        <label class="left-label">Banner do evento (imagem):</label>
-        <input type="text" value="<?php echo $banner;?>">
     </div>
     <div class="form-line">
         <input type="checkbox" <?php if($wifi) echo "checked" ;?>>

@@ -1,41 +1,59 @@
-a, a:hover, a:focus, a:active {
-    text-decoration: none;
-    color: inherit;
+body{
+    background-color: #04aa6d0c !important ; 
+}
+
+h1{
+    padding: 5px 10px 0px 10px;
+}
+
+.grid-container > a, a:hover, a:focus, a:active {
+    text-decoration: none !important; 
+    color: inherit !important;
 }
 
 .calendar-mini{
     font-family: 'Open Sans', sans-serif;
     text-align: center;
-    position: relative;
+    position: absolute;
     left: 290px;
     bottom: 10px;
-    width: 40px;
-    height: 40px;
-    border-width: 1px;
+    width: 50px;
+    height: 50px;
 }
 
 .month{
-    font-size: 14px;
-    height: 15px;
+    font-size: 13px;
     color: white;
     background-color: #E66138 ;
 }
 
+.description{
+    padding: 5px;
+    word-wrap: break-word;
+    display: inline-block;
+    width: 80%;
+}
+
 .day{
-    padding-top: 5px;
-    height: 25px;
     background-color: white;
 }
 
 .grid-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-content: space-around;
     flex-wrap: wrap;
     gap: 30px 10px;
+    margin: 25px;
+    padding: 25px;
+    border-width: 1px;
+    border-radius: 5px;
+    background-color: #04aa6d36;
+    box-shadow: 5px 3px 10px rgb(162 162 162);
 }
 
 .grid-item{
+    position: relative;
     box-shadow: 5px 3px 10px rgb(162 162 162);
     border-radius: 0px 0px 3px 3px;
     background-color: rgb(236, 236, 236);
@@ -54,3 +72,16 @@ a, a:hover, a:focus, a:active {
     display: inline-block;
 }
 
+nav{
+    margin: auto;
+}
+
+.nav {
+    margin-top: 0px;
+    text-align: center;
+}
+
+.nav ul li {
+    display: inline-block;
+    min-width: 70px;
+}

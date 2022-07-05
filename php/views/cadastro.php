@@ -16,7 +16,7 @@
 <body>
     <?php include("../utils/navbar.html");?>
     <input type="hidden" id="screen" value="cadastro">
-    <h1>Cadastro de Eventos</h1>
+    <h1>Cadastro de eventos</h1>
     <form action="../service/cadastro_service.php" method="post">
         <div class="form-line">
             <label class="left-label">Nome do evento:</label>
@@ -49,7 +49,7 @@
             <textarea id="description" rows="5" cols="46" ></textarea>
         </div>
         <div class="form-line">
-            <label class="left-label">Banner do evento (imagem):</label>
+            <label class="left-label">Banner do evento:</label>
                 <input id="banner" type="file">
         </div>
     </form>
