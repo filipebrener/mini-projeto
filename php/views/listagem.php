@@ -47,7 +47,7 @@
                     }
 
                     echo "
-                    <a href='editar.php?id=$id'>
+                    <a href='exibir.php?id=$id'>
                         <div class='grid-item' id='$id'>
                             <img src='$banner'><br>
                             <div class='description'>
