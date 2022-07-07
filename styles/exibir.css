@@ -1,0 +1,69 @@
+.form-line{
+    margin: 10px;
+}
+
+.left-label{
+    display: inline-block;
+    margin-right: 20px;
+} 
+
+.image-block{
+    margin: auto;
+    width: 70%;
+    height: 350px;
+}
+
+div#container{
+    position: relative;
+    background-color: white;
+    margin: 50px 400px;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 5px 3px 10px rgb(83, 83, 83);
+}
+
+.image-block > img{
+    width: 100%;
+    height: 100%;
+}
+
+div#container > h1{
+    font-size: 18px;
+}
+
+.calendar-mini{
+    margin-right: 10px;
+    box-shadow: 5px 3px 10px rgb(163, 163, 163);
+}
+
+div#event-calendar-description{
+    display: inline-block;
+}
+
+div#description{
+    word-wrap: break-word;
+    margin: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-top-style: hidden;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+div#description > label{
+    background-color: black;
+    display: block;
+    padding: 10px;
+    color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+div#description > p{
+    padding: 20px;
+}
+
+button#edit{
+    position: absolute;
+    left: 90%;
+}

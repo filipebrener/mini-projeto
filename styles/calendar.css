@@ -1,0 +1,16 @@
+.calendar-mini{
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    width: 50px;
+}
+
+.month{
+    font-size: 13px;
+    color: white;
+    background-color: #E66138 ;
+}
+
+.day{
+    background-color: white;
+}
