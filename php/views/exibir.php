@@ -83,6 +83,9 @@
         <a href="editar.php?id=<?php echo $id;?>">
             <button id="main-btn">Editar</button>
         </a>
+        <a href="../service/evento_service.php?action=apagar&id=<?php echo $id;?>">
+            <button id="secondary-btn">Apagar</button>
+        </a>
     </div>
 </body>
 </html>

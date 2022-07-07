@@ -17,21 +17,21 @@
     <input type="hidden" id="screen" value="cadastro">
     <div id="container" style="background-color: #04aa6d36;">
         <div id="form">
-            
-            <form action="../service/evento_service.php" method="post">
+            <form>
                 <h1>Cadastro de eventos</h1>
                 <div class="form-line">
                     <label class="left-label">Nome do evento:</label>
                     <input id="name" type="text">
                 </div>
-                <div class="form-line">
+                <!-- <div class="form-line">
                     <label class="left-label">Data de início:</label>
                     <input type="datetime-local" id="start_date">
                 </div>
                 <div class="form-line">
                     <label class="left-label">Data de encerramento:</label>
                     <input type="datetime-local" id="end_date">
-                </div>
+                </div> -->
+                <?php include("../utils/datepicker.html");?>
                 <div class="form-line">
                     <label class="left-label">Tipo do evento:</label>
                     <input type="text" id="type">

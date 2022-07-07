@@ -62,9 +62,9 @@ function getBodyForm(banner){
         start_date : document.getElementById("start_date").value,
         end_date : document.getElementById("end_date").value,
         type : document.getElementById("type").value,
-        wifi : document.getElementById("wifi").value,
-        free_parking : document.getElementById("free_parking").value,
-        free_drink : document.getElementById("free_drink").value,
+        wifi : document.getElementById("wifi").checked,
+        free_parking : document.getElementById("free_parking").checked,
+        free_drink : document.getElementById("free_drink").checked,
         description: document.getElementById("description").value,
         banner: banner
     })

@@ -24,7 +24,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../utils/images/favicon.ico" type="image/ico">
-    <link rel="stylesheet" href="../../styles/exibir.css">
+    <!-- <link rel="stylesheet" href="../../styles/exibir.css"> -->
     <script src="../../scripts/evento.js"></script>
     <script src="../../scripts/nav_bar.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
@@ -45,13 +45,16 @@
                 <label class="left-label">Nome do evento:</label>
                 <input id="name" type="text" value="<?php echo $name;?>">
             </div>
-            <div class="form-line">
+            <!-- <div class="form-line">
                 <label class="left-label">Data de início:</label>
-                <input type="datetime" id="start_date" value="<?php echo date($start_date);?>">
+                <input type="datetime-local" id="start_date">
             </div>
             <div class="form-line">
                 <label class="left-label">Data de encerramento:</label>
-                <input type="datetime" id="end_date" value="<?php echo date($end_date);?>">
+                <input type="datetime-local" id="end_date">
+            </div> -->
+            <div class="form-line">
+                <?php include("../utils/datepicker.html");?>
             </div>
             <div class="form-line">
                 <label class="left-label">Tipo do evento:</label>
@@ -72,7 +75,7 @@
                 <textarea id="description" rows="5" cols="46"><?php echo $description;?></textarea>
             </div>
             <div class="form-line">
-                <label class="left-label">Alterar banner do evento:</label>
+                <label class="left-label">Banner do evento:</label>
                 <input id="banner" type="file">
             </div>
         </div>
