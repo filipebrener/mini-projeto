@@ -30,6 +30,7 @@ try {
     }
 
     $result = $conn->query($sql);
+    echo $id ? $id : $conn->insert_id;
     $conn->close();
 
     } catch (Exception $e) {

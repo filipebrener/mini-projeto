@@ -4,7 +4,7 @@
 
 .left-label{
     display: inline-block;
-    width: 200px;
+    width: 160px;
 } 
 
 .image-block{
@@ -16,8 +16,8 @@
 div#container{
     position: relative;
     background-color: white;
-    margin: 50px 400px;
-    padding: 50px;
+    margin: 50px 20%;
+    padding: 5%;
     border-radius: 15px;
     box-shadow: 5px 3px 10px rgb(83, 83, 83);
 }
