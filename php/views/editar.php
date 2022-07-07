@@ -47,11 +47,11 @@
             </div>
             <div class="form-line">
                 <label class="left-label">Data de início:</label>
-                <input type="datetime" id="start_date" value="<?php echo $start_date;?>">
+                <input type="datetime" id="start_date" value="<?php echo date($start_date);?>">
             </div>
             <div class="form-line">
                 <label class="left-label">Data de encerramento:</label>
-                <input type="datetime" id="end_date" value="<?php echo $end_date;?>">
+                <input type="datetime" id="end_date" value="<?php echo date($end_date);?>">
             </div>
             <div class="form-line">
                 <label class="left-label">Tipo do evento:</label>

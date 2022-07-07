@@ -10,7 +10,7 @@ function create() {
                 let body = getBodyForm(this.responseText)
                 submmitEvent(body)
             } else {
-                console.log("deu ruim pra importar a imagem")
+                console.log("Erro ao importar uma imagem!")
             }
         }
         xhttp.send(form_data);
@@ -29,7 +29,7 @@ function edit(){
                 let body = getBodyWithId(this.responseText)
                 submmitEvent(body)
             } else {
-                console.log("deu ruim pra importar a imagem")
+                console.log("Erro ao importar uma imagem!")
             }
         }
         xhttp.send(form_data);
@@ -50,7 +50,7 @@ function submmitEvent(body){
             window.location = `../../php/views/exibir.php?id=${xhttp.response}`
         } else {
             // Erro ao salvar evento, tentar apagar imagem nesse ponto para que não tenha imagem salva desnecessáriamente
-            console.log("Erro ao salvar evento")            
+            console.log("Erro ao salvar um evento!")            
         }
     }
     xhttp.send(body);
@@ -73,6 +73,5 @@ function getBodyForm(banner){
 function getBodyWithId(banner){
     let body = JSON.parse(getBodyForm(banner))
     body['id'] = document.getElementById("id").value
-    console.log(body)
     return JSON.stringify(body)
 }
