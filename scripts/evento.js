@@ -46,8 +46,8 @@ function submmitEvent(body){
     xhttp.setRequestHeader("Accept", "application/json");
     xhttp.setRequestHeader("Content-Type", "application/json");
     xhttp.onload = function(event) {
-        if (xhttp.status == 201) {
-            window.location = "../../php/views/listagem.php"
+        if (xhttp.status == 200) {
+            window.location = `../../php/views/exibir.php?id=${JSON.parse(body).id}`
         } else {
             // Erro ao salvar evento, tentar apagar imagem nesse ponto para que não tenha imagem salva desnecessáriamente
             console.log("Erro ao salvar evento")            

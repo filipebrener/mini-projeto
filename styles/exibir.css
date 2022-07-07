@@ -4,7 +4,7 @@
 
 .left-label{
     display: inline-block;
-    margin-right: 20px;
+    width: 200px;
 } 
 
 .image-block{
@@ -63,7 +63,19 @@ div#description > p{
     padding: 20px;
 }
 
-button#edit{
+button#main-btn{
     position: absolute;
     left: 90%;
+}
+
+button#secondary-btn{
+    position: absolute;
+    left: calc(90% - 100px);
+}
+
+div#form{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }

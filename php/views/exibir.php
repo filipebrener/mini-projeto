@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="../../styles/calendar.css">
     <script src="../../scripts/evento.js"></script>
     <script src="../../scripts/nav_bar.js"></script>
-    <script src="../../scripts/exibir.js"></script>
+    <script src="../../scripts/background-color.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -57,8 +57,8 @@
             </div>
         </div>
         <div class="form-line">
-            <label class="left-label">Tipo do evento:</label>
-            <?php echo $type;?>
+            <label>Tipo do evento:</label>
+            <?php echo "&nbsp;$type";?>
         </div>
         <div class="form-line">
 
@@ -81,7 +81,7 @@
             <p><?php echo $description;?></p>
         </div>
         <a href="editar.php?id=<?php echo $id;?>">
-            <button id="edit">Editar</button>
+            <button id="main-btn">Editar</button>
         </a>
     </div>
 </body>
