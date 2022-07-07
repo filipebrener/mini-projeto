@@ -45,16 +45,13 @@
                 <label class="left-label">Nome do evento:</label>
                 <input id="name" type="text" value="<?php echo $name;?>">
             </div>
-            <!-- <div class="form-line">
+            <div class="form-line">
                 <label class="left-label">Data de início:</label>
-                <input type="datetime-local" id="start_date">
+                <input type="datetime" id="start_date" value="<?php echo $start_date;?>">
             </div>
             <div class="form-line">
                 <label class="left-label">Data de encerramento:</label>
-                <input type="datetime-local" id="end_date">
-            </div> -->
-            <div class="form-line">
-                <?php include("../utils/datepicker.html");?>
+                <input type="datetime" id="end_date" value="<?php echo $end_date;?>">
             </div>
             <div class="form-line">
                 <label class="left-label">Tipo do evento:</label>
