@@ -63,12 +63,31 @@
                     <a>";
 
                 }
+            } else {
+
+                $current_month = date('M',time());
+                $current_day = date('d',time());
+
+                echo "
+                <a href='cadastro.php?'>
+                    <div class='grid-item'>
+                        <img src='../utils/images/cadastro.png'><br>
+                        <div class='description'>
+                            <strong>Nenhum evento cadastrado</strong><br>
+                            Clique aqui para adcionar<br>
+                        </div>
+                        <div class='calendar-mini'>
+                            <div class='month'> $current_month </div>
+                            <div class='day'> <strong> $current_day </strong> </div>
+                        </div>
+                    </div>
+                <a>";
             }
             $conn->close();
 
         ?>
 
-</div>
+    </div>
 <div class="nav">
     <nav aria-label='Navegação de página'>
         <ul class='pagination'>

@@ -56,12 +56,11 @@ h1{
 
 .grid-item:hover{
     background-color: #04AA6D;
-    font-size: 20px;
     border-width: 2px;
 }
 
 .grid-item:hover > .calendar-mini{
-    border-width: 1px;
+    border-width: 2px;
     border-style: solid;
     border-color: white;
 }
