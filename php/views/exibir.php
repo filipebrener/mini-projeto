@@ -40,6 +40,7 @@
 <body>
     <?php include("../utils/navbar.html");?>
     <input id="id" type="hidden" value="<?php echo $id;?>">
+    <input id="banner" type="hidden" value="<?php echo $banner;?>">
     <div id="container">
         <div class="image-block">
             <img id="image" src="<?php echo $banner;?>" alt="Banner do evento">
@@ -83,9 +84,7 @@
         <a href="editar.php?id=<?php echo $id;?>">
             <button id="main-btn">Editar</button>
         </a>
-        <a href="../service/evento_service.php?action=apagar&id=<?php echo $id;?>">
-            <button id="secondary-btn">Apagar</button>
-        </a>
+            <button onclick="delete_event()" id="secondary-btn">Apagar</button>
     </div>
 </body>
 </html>

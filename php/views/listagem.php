@@ -52,7 +52,7 @@
                         <div class='grid-item' id='$id'>
                             <img src='$banner'><br>
                             <div class='description'>
-                                $name<br>
+                                <strong>$name</strong><br>
                                 $description<br>
                             </div>
                             <div class='calendar-mini'>

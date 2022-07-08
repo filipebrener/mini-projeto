@@ -9,7 +9,7 @@ try {
     if($_GET['action'] == 'apagar'){
         $sql = "DELETE FROM evento WHERE id = $id";
         $conn->query($sql);
-        header('Location: ../views/listagem.php');
+        $conn->close();
         die();
     }
     

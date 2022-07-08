@@ -18,8 +18,10 @@ function create() {
 }
 
 function edit(){
+    let current_banner = document.getElementById("current_banner").value
     let file_obj = document.getElementById('banner').files[0]
     if(file_obj != undefined) {
+        delete_image(current_banner)
         var form_data = new FormData();                  
         form_data.append('file', file_obj);
         var xhttp = new XMLHttpRequest();
@@ -34,8 +36,7 @@ function edit(){
         }
         xhttp.send(form_data);
     } else {
-        let banner = document.getElementById("current_banner").value
-        let body = getBodyWithId(banner)
+        let body = getBodyWithId(current_banner)
         submmitEvent(body)
     }
 }
@@ -46,14 +47,43 @@ function submmitEvent(body){
     xhttp.setRequestHeader("Accept", "application/json");
     xhttp.setRequestHeader("Content-Type", "application/json");
     xhttp.onload = function(event) {
-             if (xhttp.status == 200) {
+            if (xhttp.status == 200) {
             window.location = `../../php/views/exibir.php?id=${xhttp.response}`
         } else {
-            // Erro ao salvar evento, tentar apagar imagem nesse ponto para que não tenha imagem salva desnecessáriamente
             console.log("Erro ao salvar um evento!")            
+            delete_image(body.banner)
         }
     }
     xhttp.send(body);
+}
+
+function delete_event(){
+    let id = document.getElementById("id").value
+    let banner = document.getElementById("banner").value
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", `../service/evento_service.php?action=apagar&id=${id}`, true);
+    xhttp.onload = function(event){
+        if(xhttp.status == 200){
+            delete_image(banner)
+            window.location = "../../php/views/listagem.php"
+        } else {
+            console.log("Erro ao deletar um evento!")
+        }
+    }
+    xhttp.send()
+}
+
+function delete_image(filepath){
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", `../service/image_importer.php?action=delete&filepath=${filepath}`, true);
+    xhttp.onload = function(event){
+        if(xhttp.status == 200){
+            console.log(`${filepath} apagado com sucesso!`)
+        } else {
+            console.log(`Erro ao apagar ${filepath}`)
+        }
+    }
+    xhttp.send()
 }
 
 function getBodyForm(banner){
