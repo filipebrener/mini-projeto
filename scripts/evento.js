@@ -75,3 +75,7 @@ function getBodyWithId(banner){
     body['id'] = document.getElementById("id").value
     return JSON.stringify(body)
 }
+
+function update_min_end_date(min_date){
+    document.getElementById("end_date").min = min_date;
+}

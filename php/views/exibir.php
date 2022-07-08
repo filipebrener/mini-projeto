@@ -6,7 +6,7 @@
     if($row = $result->fetch_assoc()) {
         $name = $row['name'];
         $start_date = strtotime($row['start_date']);
-        $end_date = strtotime($row['start_date']);
+        $end_date = strtotime($row['end_date']);
         $type = $row['type'];
         $banner = $row['banner'];
         $wifi = $row['wifi'] ? '' : '-off';

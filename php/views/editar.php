@@ -1,18 +1,22 @@
 <?php
+
     include("../database/connect.inc.php");
+    include("../service/date_formater_service.php");
+
     $id = $_GET['id'];
     $sql = "SELECT * FROM evento WHERE id = $id LIMIT 1";
     $result = $conn->query($sql);
     if($row = $result->fetch_assoc()) {
         $name = $row['name'];
-        $start_date = $row['start_date'];
-        $end_date = $row['end_date'];
         $type = $row['type'];
         $banner = $row['banner'];
         $wifi = $row['wifi'];
         $free_parking = $row['free_parking'];
         $free_drink = $row['free_drink'];
         $description = $row['description'];
+        $start_datetime = get_date_time_format(strtotime($row['start_date']));
+        $end_datetime = get_date_time_format(strtotime($row['end_date']));
+        $current_datetime = get_date_time_format(time());
     }     
     $conn->close();
 ?>
@@ -47,11 +51,11 @@
             </div>
             <div class="form-line">
                 <label class="left-label">Data de início:</label>
-                <input type="datetime" id="start_date" value="<?php echo $start_date;?>">
+                <input type="datetime-local" id="start_date" onchange="update_min_end_date(this.value)" min="<?php echo $current_datetime;?>" value="<?php echo $start_datetime;?>">
             </div>
             <div class="form-line">
                 <label class="left-label">Data de encerramento:</label>
-                <input type="datetime" id="end_date" value="<?php echo $end_date;?>">
+                <input type="datetime-local" id="end_date" min="<?php echo $start_datetime;?>" value="<?php echo $end_datetime;?>">
             </div>
             <div class="form-line">
                 <label class="left-label">Tipo do evento:</label>

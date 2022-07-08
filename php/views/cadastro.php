@@ -1,4 +1,7 @@
-<?php include("../database/connect.inc.php");?>
+<?php 
+    include("../service/date_formater_service.php");
+    $current_datetime = get_date_time_format(time());
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -23,15 +26,14 @@
                     <label class="left-label">Nome do evento:</label>
                     <input id="name" type="text">
                 </div>
-                <!-- <div class="form-line">
+                <div class="form-line">
                     <label class="left-label">Data de início:</label>
-                    <input type="datetime-local" id="start_date">
+                    <input type="datetime-local" onchange="update_min_end_date(this.value)" min="<?php echo $current_datetime;?>" id="start_date">
                 </div>
                 <div class="form-line">
                     <label class="left-label">Data de encerramento:</label>
                     <input type="datetime-local" id="end_date">
-                </div> -->
-                <?php include("../utils/datepicker.html");?>
+                </div>
                 <div class="form-line">
                     <label class="left-label">Tipo do evento:</label>
                     <input type="text" id="type">

@@ -16,7 +16,6 @@ try {
     $inputJSON = file_get_contents('php://input');
     $input = json_decode($inputJSON, TRUE); //convert JSON into array
     
-    
     $id = $input['id'];
     $name = $input['name'];
     $start_date = $input['start_date'];
