@@ -71,7 +71,7 @@
                 echo "
                 <a href='cadastro.php?'>
                     <div class='grid-item'>
-                        <img src='../utils/images/cadastro.png'><br>
+                        <img src='../utils/images/add-icon.png'><br>
                         <div class='description'>
                             <strong>Nenhum evento cadastrado</strong><br>
                             Clique aqui para adcionar<br>

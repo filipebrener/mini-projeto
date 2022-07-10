@@ -2,6 +2,7 @@
 
     include("../database/connect.inc.php");
     include("../service/date_formater_service.php");
+    include("../service/type_functions_service.php");
 
     $id = $_GET['id'];
     $sql = "SELECT * FROM evento WHERE id = $id LIMIT 1";
@@ -58,9 +59,11 @@
                 <input type="datetime-local" id="end_date" min="<?php echo $start_datetime;?>" value="<?php echo $end_datetime;?>">
             </div>
             <div class="form-line">
-                <label class="left-label">Tipo do evento:</label>
-                <input type="text" id="type" value="<?php echo $type;?>">
-            </div>
+                    <label class="left-label">Tipo do evento:</label>
+                    <select id="type_id">
+                        <?php get_options() ?>
+                    </select>
+                </div>
             <div class="form-line">
                 <input id="wifi" type="checkbox" <?php if($wifi) echo "checked" ;?>>
                 <label>Wi-fi</label><br>

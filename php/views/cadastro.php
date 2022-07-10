@@ -1,5 +1,7 @@
 <?php 
+    include("../database/connect.inc.php");
     include("../service/date_formater_service.php");
+    include("../service/type_functions_service.php");
     $current_datetime = get_date_time_format(time());
 ?>
 
@@ -36,7 +38,10 @@
                 </div>
                 <div class="form-line">
                     <label class="left-label">Tipo do evento:</label>
-                    <input type="text" id="type">
+                    <select id="type_id">
+                        <option selected disabled hidden>Selecione um tipo</option>
+                    <?php get_options() ?>
+                    </select>
                 </div>
                 <div class="form-line">
                     <input type="checkbox" id="wifi">

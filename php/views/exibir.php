@@ -1,22 +1,31 @@
 <?php
+    
     include("../database/connect.inc.php");
-    $id = $_GET['id'];
-    $sql = "SELECT * FROM evento WHERE id = $id LIMIT 1";
-    $result = $conn->query($sql);
-    if($row = $result->fetch_assoc()) {
-        $name = $row['name'];
-        $start_date = strtotime($row['start_date']);
-        $end_date = strtotime($row['end_date']);
-        $type = $row['type'];
-        $banner = $row['banner'];
-        $wifi = $row['wifi'] ? '' : '-off';
-        $free_parking = $row['free_parking'] ? '' : ' Sem ';
-        $free_drink = $row['free_drink'] ? '' : ' Sem ';
-        $description = $row['description'];
-        $start_day = date('d', $start_date );
-        $start_month = date('M', $start_date );
-    }     
-    $conn->close();
+    include("../service/type_functions_service.php");
+    
+    try{
+        $id = $_GET['id'];
+        $sql = "SELECT * FROM evento WHERE id = $id LIMIT 1";
+        $result = $conn->query($sql);
+        if($row = $result->fetch_assoc()) {
+            $name = $row['name'];
+            $start_date = strtotime($row['start_date']);
+            $end_date = strtotime($row['end_date']);
+            $type = get_name($row['type_id']);
+            $banner = $row['banner'];
+            $wifi = $row['wifi'] ? '' : '-off';
+            $free_parking = $row['free_parking'] ? '' : ' Sem ';
+            $free_drink = $row['free_drink'] ? '' : ' Sem ';
+            $description = $row['description'];
+            $start_day = date('d', $start_date );
+            $start_month = date('M', $start_date );
+        }     
+        $conn->close();
+
+    } catch (Exception $e) {
+        http_response_code(500);
+        echo 'Exceção capturada: ',  $e->getMessage(), "\n";
+    }
 ?>
 
 <!DOCTYPE html>
